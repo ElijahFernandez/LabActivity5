@@ -19,9 +19,9 @@ public class LeapYearGUI extends JFrame{
                 boolean isLeapYear = (getLeapYear % 4 == 0 && getLeapYear % 100 != 0) || (getLeapYear % 400 == 0);
 
                 if (isLeapYear) {
-                    JOptionPane.showMessageDialog(panel1, "The year is a leap year.");
+                    JOptionPane.showMessageDialog(panel1, "Leap year");
                 } else {
-                    JOptionPane.showMessageDialog(panel1, "The year is not a leap year.");
+                    JOptionPane.showMessageDialog(panel1, "Not a leap year");
                 }
             }
         });
