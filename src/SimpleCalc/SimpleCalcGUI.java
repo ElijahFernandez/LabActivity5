@@ -1,7 +1,5 @@
 package SimpleCalc;
 
-import LeapYearChecker.LeapYearGUI;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +22,26 @@ public class SimpleCalcGUI extends JFrame {
 
                 int parseFirstInt = (Integer.parseInt(getFirstInt));
                 int parseSecondInt = (Integer.parseInt(getSecondInt));
+                int result;
+                switch(operator) {
+                    case "+":
+                        result = parseFirstInt + parseSecondInt;
+                        lblResult.setText(String.valueOf(result));
+                        break;
+                    case "-":
+                        result = parseFirstInt - parseSecondInt;
+                        lblResult.setText(String.valueOf(result));
+                        break;
+                    case "*":
+                        result = parseFirstInt * parseSecondInt;
+                        lblResult.setText(String.valueOf(result));
+                        break;
+                    case "/":
+                        result = parseFirstInt / parseSecondInt;
+                        lblResult.setText(String.valueOf(result));
+                        break;
+
+                }
             }
         });
     }
