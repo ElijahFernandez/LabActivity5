@@ -15,15 +15,22 @@ public class LeapYearGUI extends JFrame{
         checkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int getLeapYear = (Integer.parseInt(textField1.getText()));
-                boolean isLeapYear = (getLeapYear % 4 == 0 && getLeapYear % 100 != 0) || (getLeapYear % 400 == 0);
+                String leapYear = textField1.getText();
+                try{
+                    int getLeapYear = (Integer.parseInt(leapYear));
+                    boolean isLeapYear = (getLeapYear % 4 == 0 && getLeapYear % 100 != 0) || (getLeapYear % 400 == 0);
 
-                if (isLeapYear) {
-                    JOptionPane.showMessageDialog(panel1, "Leap year");
-                } else {
-                    JOptionPane.showMessageDialog(panel1, "Not a leap year");
+                    if (isLeapYear) {
+                        JOptionPane.showMessageDialog(panel1, "Leap year");
+                    } else {
+                        JOptionPane.showMessageDialog(panel1, "Not a leap year");
+                    }
+                } catch (NumberFormatException i) {
+                    JOptionPane.showMessageDialog(panel1, "Invalid input!");
                 }
+
             }
+
         });
     }
 
