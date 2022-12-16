@@ -1,4 +1,4 @@
-package LeapYear;
+package LeapYearChecker;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
