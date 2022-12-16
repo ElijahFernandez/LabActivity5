@@ -16,32 +16,46 @@ public class SimpleCalcGUI extends JFrame {
         btnCompute.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
                 String getFirstInt = tfNumber1.getText();
+                if(getFirstInt.isEmpty()) {
+                    throw new IllegalArgumentException();
+                }
                 String getSecondInt = tfNumber2.getText();
+                if(getSecondInt.isEmpty()) {
+                    throw new IllegalArgumentException();
+                }
                 String operator = (String) cbOperations.getSelectedItem();
 
                 int parseFirstInt = (Integer.parseInt(getFirstInt));
                 int parseSecondInt = (Integer.parseInt(getSecondInt));
                 int result;
-                switch(operator) {
-                    case "+":
-                        result = parseFirstInt + parseSecondInt;
-                        lblResult.setText(String.valueOf(result));
-                        break;
-                    case "-":
-                        result = parseFirstInt - parseSecondInt;
-                        lblResult.setText(String.valueOf(result));
-                        break;
-                    case "*":
-                        result = parseFirstInt * parseSecondInt;
-                        lblResult.setText(String.valueOf(result));
-                        break;
-                    case "/":
-                        result = parseFirstInt / parseSecondInt;
-                        lblResult.setText(String.valueOf(result));
-                        break;
 
+                    switch(operator) {
+                        case "+":
+                            result = parseFirstInt + parseSecondInt;
+                            lblResult.setText(String.valueOf(result));
+                            break;
+                        case "-":
+                            result = parseFirstInt - parseSecondInt;
+                            lblResult.setText(String.valueOf(result));
+                            break;
+                        case "*":
+                            result = parseFirstInt * parseSecondInt;
+                            lblResult.setText(String.valueOf(result));
+                            break;
+                        case "/":
+                            result = parseFirstInt / parseSecondInt;
+                            lblResult.setText(String.valueOf(result));
+                            break;
+
+                    }
+                } catch(ArithmeticException i) {
+                    JOptionPane.showMessageDialog(panel1, "Invalid Input!");
+                } catch(IllegalArgumentException i) {
+                    JOptionPane.showMessageDialog(panel1, "No Input!");
                 }
+
             }
         });
     }

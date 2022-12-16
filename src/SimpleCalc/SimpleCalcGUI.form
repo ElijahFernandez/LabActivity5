@@ -41,6 +41,7 @@
                 </constraints>
                 <properties>
                   <font size="16"/>
+                  <horizontalAlignment value="0"/>
                 </properties>
               </component>
             </children>
@@ -84,6 +85,7 @@
                 </constraints>
                 <properties>
                   <font size="16"/>
+                  <horizontalAlignment value="0"/>
                 </properties>
               </component>
             </children>
@@ -112,7 +114,9 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <editable value="false"/>
                   <font size="16"/>
+                  <horizontalAlignment value="0"/>
                 </properties>
               </component>
             </children>
