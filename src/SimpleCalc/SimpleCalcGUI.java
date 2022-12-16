@@ -3,6 +3,7 @@ package SimpleCalc;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class SimpleCalcGUI extends JFrame {
     private JPanel panel1;
@@ -31,7 +32,7 @@ public class SimpleCalcGUI extends JFrame {
                 int parseSecondInt = (Integer.parseInt(getSecondInt));
                 int result;
 
-                    switch(operator) {
+                    switch(Objects.requireNonNull(operator)) {
                         case "+":
                             result = parseFirstInt + parseSecondInt;
                             lblResult.setText(String.valueOf(result));
