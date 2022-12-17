@@ -43,18 +43,33 @@ public class FoodOrderGUI extends JFrame {
                     if(rbNone.isSelected()) {
                         String formattedNumber = df.format(total);
                         JOptionPane.showMessageDialog(panel1, "The total price is Php "+ formattedNumber);
+                        cPizza.setSelected(false);
+                        cBurger.setSelected(false);
+                        cFries.setSelected(false);
+                        cSoftDrinks.setSelected(false);
+                        cTea.setSelected(false);
+                        cSundae.setSelected(false);
                     }
                     if(rb5.isSelected()) {
                         total = total - (total *.05);
                     }
+
                     if(rb10.isSelected()) {
                         total *= total - (total *.10);
                     }
+
                     if(rb15.isSelected()) {
                         total *= total - (total *.15);
                     }
+
                     String formattedNumber = df.format(total);
                     JOptionPane.showMessageDialog(panel1, "The total price is Php "+ formattedNumber);
+                    cPizza.setSelected(false);
+                    cBurger.setSelected(false);
+                    cFries.setSelected(false);
+                    cSoftDrinks.setSelected(false);
+                    cTea.setSelected(false);
+                    cSundae.setSelected(false);
                 }
 
             }
