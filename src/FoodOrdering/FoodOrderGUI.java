@@ -43,33 +43,30 @@ public class FoodOrderGUI extends JFrame {
                     if(rbNone.isSelected()) {
                         String formattedNumber = df.format(total);
                         JOptionPane.showMessageDialog(panel1, "The total price is Php "+ formattedNumber);
-                        cPizza.setSelected(false);
-                        cBurger.setSelected(false);
-                        cFries.setSelected(false);
-                        cSoftDrinks.setSelected(false);
-                        cTea.setSelected(false);
-                        cSundae.setSelected(false);
+                        int resetPanel = JOptionPane.showConfirmDialog(panel1, "Exiting will reset the total price. Confirm exit??", "Confirm", JOptionPane.YES_NO_OPTION);
+                        if (resetPanel == JOptionPane.CLOSED_OPTION || resetPanel == JOptionPane.YES_OPTION) {
+                            total = 0;
+                        }
+                        return;
                     }
-                    if(rb5.isSelected()) {
+                    else if(rb5.isSelected()) {
                         total = total - (total *.05);
                     }
 
-                    if(rb10.isSelected()) {
+                    else if(rb10.isSelected()) {
                         total *= total - (total *.10);
                     }
 
-                    if(rb15.isSelected()) {
+                    else if(rb15.isSelected()) {
                         total *= total - (total *.15);
                     }
 
                     String formattedNumber = df.format(total);
                     JOptionPane.showMessageDialog(panel1, "The total price is Php "+ formattedNumber);
-                    cPizza.setSelected(false);
-                    cBurger.setSelected(false);
-                    cFries.setSelected(false);
-                    cSoftDrinks.setSelected(false);
-                    cTea.setSelected(false);
-                    cSundae.setSelected(false);
+                    int resetPanel = JOptionPane.showConfirmDialog(panel1, "Exiting will reset the total price. Confirm exit?", "Confirm", JOptionPane.YES_NO_OPTION);
+                    if (resetPanel == JOptionPane.CLOSED_OPTION || resetPanel == JOptionPane.YES_OPTION) {
+                        total = 0;
+                    }
                 }
 
             }
